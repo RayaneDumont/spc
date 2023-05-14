@@ -44,7 +44,7 @@ function App() {
         <img className='logo-spc' src={logo} ></img>
       </header>
       <div className='spc-container'>
-        <div className='pad'
+        <div className='pad drums'
             onClick={() => handleSelectedSound(kickSound)}
             preload="auto" // Mettez à jour cette ligne
             onCanPlayThrough={() => setIsLoaded(true)}
@@ -52,7 +52,7 @@ function App() {
           Kick
         </div>
 
-        <div className='pad' 
+        <div className='pad drums' 
              onClick={() => handleSelectedSound(snareSound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
@@ -60,7 +60,7 @@ function App() {
           Snare
         </div>
 
-        <div className='pad'
+        <div className='pad drums'
              onClick={() => handleSelectedSound(hihatSound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
@@ -68,7 +68,7 @@ function App() {
           Hi-hat
         </div>
 
-        <div className='pad' 
+        <div className='pad drums' 
              onClick={() => handleSelectedSound(clapSound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
@@ -76,7 +76,7 @@ function App() {
           Clap
         </div>
 
-        <div className='pad' 
+        <div className='pad drums' 
              onClick={() => handleSelectedSound(rollhatSound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
@@ -84,7 +84,7 @@ function App() {
           Roll Hat
         </div>
 
-        <div className='pad' 
+        <div className='pad perc' 
              onClick={() => handleSelectedSound(voxSound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
@@ -92,7 +92,7 @@ function App() {
           Vox
         </div>
 
-        <div className='pad' 
+        <div className='pad bass808' 
              onClick={() => handleSelectedSound(bass808Sound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
@@ -100,7 +100,7 @@ function App() {
           808
         </div>
 
-        <div className='pad' 
+        <div className='pad sound' 
              onClick={() => handleSelectedSound(sound1)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
@@ -108,7 +108,7 @@ function App() {
           Sound 2
         </div>
 
-        <div className='pad' 
+        <div className='pad sound' 
              onClick={() => handleSelectedSound(sound2)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}

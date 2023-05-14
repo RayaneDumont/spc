@@ -19,11 +19,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   width: 75%;
   height: 75vh;
 }
 
 .pad {
+  cursor: pointer;
   margin: 1em;
   display: flex;
   align-items: center;
@@ -36,9 +38,50 @@
                 -20px -20px 60px #ffffff;
  }
 
- .pad:active {
-  background-color: #353535;
+ .drums:active {
+  background-color: #45e845;
   color: white;
   box-shadow: 20px 20px 60px #bebebe,
                 -20px -20px 60px #ffffff;
+ }
+
+ .perc:active {
+  background-color: #e7ff36;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .bass808:active {
+  background-color: #e84545;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .sound:active {
+  background-color: #c037cc;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ @media (max-width: 900px) {
+  .spc-container {
+    width: 100%;
+  }
+
+  .pad {
+    width: 130px;
+    height: 130px;
+    border-radius: 25px;
+   }
+ }
+
+ @media (max-width: 500px) {
+  .pad {
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
+   }
  }
