@@ -1,5 +1,6 @@
 import './index.scss';
 import logo from './logo-spc.png'
+import portfolioIcon from './portfolio-bag.svg';
 import React,{ useState, useEffect, useRef } from 'react';
 import kickSound from './sounds/kick.wav';
 import snareSound from './sounds/snare.wav'
@@ -101,6 +102,13 @@ function App() {
       <audio ref={soundRef} src={selectedSound} preload="none" />
       <header className="App-header">
         <img className='logo-spc' src={logo} ></img>
+        <p className='social-medias'>
+          <img className='portfolio-icon' 
+               src={portfolioIcon}
+               >
+          </img> 
+            <a href='https://rayanedumont-portfolio.surge.sh/' target='_blank'>Portfolio</a>
+        </p>
       </header>
       <div className='spc-container'>
         <div className={`pad drums ${keyPressed === 'a' ? 'active' : ''}`}

@@ -100,6 +100,20 @@
   font-weight: 100;
  }
 
+ .social-medias {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+ }
+
+ .portfolio-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+ }
+
  @media (max-width: 900px) {
   .spc-container {
     width: 100%;
