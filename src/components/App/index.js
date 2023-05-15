@@ -19,6 +19,65 @@ function App() {
   const soundRef = useRef(null);
   const currentSoundRef = useRef(null);
 
+  const [keyPressed, setKeyPressed] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'a') {
+        setKeyPressed(event.key);
+        handleSelectedSound(kickSound);
+      } else if (event.key === 'z') {
+        setKeyPressed(event.key);
+        handleSelectedSound(snareSound);
+      } else if (event.key === 'e') {
+        setKeyPressed(event.key);
+        handleSelectedSound(hihatSound);
+      } else if (event.key === 'q') {
+        setKeyPressed(event.key);
+        handleSelectedSound(clapSound);
+      } else if (event.key === 's') {
+        setKeyPressed(event.key);
+        handleSelectedSound(rollhatSound);
+      } else if (event.key === 'd') {
+        setKeyPressed(event.key);
+        handleSelectedSound(voxSound);
+      } else if (event.key === 'w') {
+        setKeyPressed(event.key);
+        handleSelectedSound(bass808Sound);
+      } else if (event.key === 'x') {
+        setKeyPressed(event.key);
+        handleSelectedSound(sound1);
+      } else if (event.key === 'c') {
+        setKeyPressed(event.key);
+        handleSelectedSound(sound2);
+      }
+    };
+
+    const handleKeyUp = (event) => {
+      if (
+        event.key === 'a' ||
+        event.key === 'z' ||
+        event.key === 'e' ||
+        event.key === 'q' ||
+        event.key === 's' ||
+        event.key === 'd' ||
+        event.key === 'w' ||
+        event.key === 'x' ||
+        event.key === 'c'
+      ) {
+        setKeyPressed(null);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keyup', handleKeyUp);
+    };
+  }, []);
+
   const handleSelectedSound = async (sound) => {
     if (currentSoundRef.current) {
       currentSoundRef.current.pause();
@@ -44,76 +103,85 @@ function App() {
         <img className='logo-spc' src={logo} ></img>
       </header>
       <div className='spc-container'>
-        <div className='pad drums'
+        <div className={`pad drums ${keyPressed === 'a' ? 'active' : ''}`}
             onClick={() => handleSelectedSound(kickSound)}
             preload="auto" // Mettez à jour cette ligne
             onCanPlayThrough={() => setIsLoaded(true)}
         >
-          Kick
+          <p>Kick</p>
+          <p className='keypress'>Press A</p>
         </div>
 
-        <div className='pad drums' 
+        <div className={`pad drums ${keyPressed === 'z' ? 'active' : ''}`}
              onClick={() => handleSelectedSound(snareSound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
         >
-          Snare
+          <p>Snare</p>
+          <p className='keypress'>Press Z</p>
         </div>
 
-        <div className='pad drums'
+        <div className={`pad drums ${keyPressed === 'e' ? 'active' : ''}`}
              onClick={() => handleSelectedSound(hihatSound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
         >
-          Hi-hat
+          <p>Hi-Hat</p>
+          <p className='keypress'>Press E</p>
         </div>
 
-        <div className='pad drums' 
+        <div className={`pad drums ${keyPressed === 'q' ? 'active' : ''}`}
              onClick={() => handleSelectedSound(clapSound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
         >
-          Clap
+          <p>Clap</p>
+          <p className='keypress'>Press Q</p>
         </div>
 
-        <div className='pad drums' 
+        <div className={`pad drums ${keyPressed === 's' ? 'active' : ''}`}
              onClick={() => handleSelectedSound(rollhatSound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
         >
-          Roll Hat
+          <p>Roll Hat</p>
+          <p className='keypress'>Press S</p>
         </div>
 
-        <div className='pad perc' 
+        <div className={`pad perc ${keyPressed === 'd' ? 'active' : ''}`}
              onClick={() => handleSelectedSound(voxSound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
         >
-          Vox
+          <p>Vox</p>
+          <p className='keypress'>Press D</p>
         </div>
 
-        <div className='pad bass808' 
+        <div className={`pad bass808 ${keyPressed === 'w' ? 'active' : ''}`}
              onClick={() => handleSelectedSound(bass808Sound)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
         >
-          808
+          <p>808</p>
+          <p className='keypress'>Press W</p>
         </div>
 
-        <div className='pad sound' 
+        <div className={`pad sound ${keyPressed === 'x' ? 'active' : ''}`}
              onClick={() => handleSelectedSound(sound1)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
         >
-          Sound 2
+          <p>Sample 1</p>
+          <p className='keypress'>Press X</p>
         </div>
 
-        <div className='pad sound' 
+        <div className={`pad sound ${keyPressed === 'c' ? 'active' : ''}`}
              onClick={() => handleSelectedSound(sound2)}
              preload="auto" // Mettez à jour cette ligne
              onCanPlayThrough={() => setIsLoaded(true)}
         >
-          Sound 2
+          <p>Sample 2</p>
+          <p className='keypress'>Press C</p>
         </div>
       </div>
     </div>

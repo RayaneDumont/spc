@@ -26,10 +26,12 @@
 
 .pad {
   cursor: pointer;
+  user-select: none;
   margin: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 190px;
   height: 190px;
   border-radius: 50px;
@@ -45,6 +47,13 @@
                 -20px -20px 60px #ffffff;
  }
 
+ .drums.active {
+  background-color: #45e845;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
  .perc:active {
   background-color: #e7ff36;
   color: white;
@@ -52,8 +61,22 @@
                 -20px -20px 60px #ffffff;
  }
 
+ .perc.active {
+  background-color: #e7ff36;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
  .bass808:active {
-  background-color: #e84545;
+  background-color: #ff1e1e;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .bass808.active {
+  background-color: #ff1e1e;
   color: white;
   box-shadow: 20px 20px 60px #bebebe,
                 -20px -20px 60px #ffffff;
@@ -64,6 +87,17 @@
   color: white;
   box-shadow: 20px 20px 60px #bebebe,
                 -20px -20px 60px #ffffff;
+ }
+
+ .sound.active {
+  background-color: #c037cc;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .keypress {
+  font-weight: 100;
  }
 
  @media (max-width: 900px) {
