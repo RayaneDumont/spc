@@ -1,38 +1,139 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-color: #E8E8E8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 25vh;
+}
+
+.spc-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: 75vh;
+}
+
+.pad {
+  cursor: pointer;
+  user-select: none;
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 190px;
+  height: 190px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .drums:active {
+  background-color: #45e845;
   color: white;
-}
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
 
-.App-link {
-  color: #61dafb;
-}
+ .drums.active {
+  background-color: #45e845;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ .perc:active {
+  background-color: #e7ff36;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .perc.active {
+  background-color: #e7ff36;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .bass808:active {
+  background-color: #ff1e1e;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .bass808.active {
+  background-color: #ff1e1e;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .sound:active {
+  background-color: #c037cc;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .sound.active {
+  background-color: #c037cc;
+  color: white;
+  box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+ }
+
+ .keypress {
+  font-weight: 100;
+ }
+
+ .social-medias {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+ }
+
+ .portfolio-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+ }
+
+ @media (max-width: 900px) {
+  .spc-container {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .pad {
+    width: 130px;
+    height: 130px;
+    border-radius: 25px;
+   }
+
+  .keypress {
+    display: none;
   }
-}
+ }
+
+ @media (max-width: 500px) {
+  .pad {
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
+   }
+ }
