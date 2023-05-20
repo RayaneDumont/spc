@@ -99,7 +99,7 @@ function App() {
 
   return (
     <div className="App">
-      <audio ref={soundRef} src={selectedSound} preload="auto" />
+      <audio ref={soundRef} src={selectedSound} preload="none" />
       <header className="App-header">
         <img className='logo-spc' src={logo} ></img>
         <p className='social-medias'>
