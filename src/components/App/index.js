@@ -80,10 +80,6 @@ function App() {
   }, []);
 
   const handleSelectedSound = async (sound) => {
-    if (currentSoundRef.current) {
-      currentSoundRef.current.pause();
-    }
-  
     setSelectedSound(sound);
     setIsLoading(true);
     currentSoundRef.current = soundRef.current;
